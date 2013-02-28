@@ -1,22 +1,135 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+print('Добро пожаловать в книжный магазин "Кенекесем"')
+f = open('book.txt', 'r')
+s = f.readline()
+def assort(s):
+    print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+    while s is not '-':
+        i=len(s)-1
+        k4=0
+        s1=''#автор
+        s2=''#название
+        s3=''#цена
+        s4=''#количество
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k4=k4+1
+                
+        i=i-1
+        s4=s[-k4:-1]
+        k3=k4+1
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k3=k3+1
+        i=i-2
+        s3=s[-k3:-k4]
+        k2=k3+2
+        while (i>1)and(s[i]!='"'):
+                i=i-1
+                k2=k2+1
+        i=i-1
+        s2=s[-k2-1:-k3]
+        k1=k2+2
+        s1=s[:-k1]
+        print ('|',s1.center(25,' '),'|',s2.center(25,' '),
+                       '|',s3.center(4,' '),'|',s4.center(3,' '),'|')
+        print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+        s = f.readline()
 
-# Custom for Visual Studio
-*.cs     diff=csharp
-*.sln    merge=union
-*.csproj merge=union
-*.vbproj merge=union
-*.fsproj merge=union
-*.dbproj merge=union
+def auth (s):
+    print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+    while (s is not '-'):
+        i=len(s)-1
+        k4=0
+        s1=''#автор
+        s2=''#название
+        s3=''#цена
+        s4=''#количество
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k4=k4+1
+                
+        i=i-1
+        s4=s[-k4:-1]
+        k3=k4+1
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k3=k3+1
+        i=i-2
+        s3=s[-k3:-k4]
+        k2=k3+2
+        while (i>1)and(s[i]!='"'):
+                i=i-1
+                k2=k2+1
+        i=i-1
+        s2=s[-k2-1:-k3]
+        k1=k2+2
+        s1=s[:-k1]
+        if d in s1:
+            print ('|',s1.center(25,' '),'|',s2.center(25,' '),
+                       '|',s3.center(4,' '),'|',s4.center(3,' '),'|')
+            print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+        s = f.readline()
 
-# Standard to msysgit
-*.doc	 diff=astextplain
-*.DOC	 diff=astextplain
-*.docx diff=astextplain
-*.DOCX diff=astextplain
-*.dot  diff=astextplain
-*.DOT  diff=astextplain
-*.pdf  diff=astextplain
-*.PDF	 diff=astextplain
-*.rtf	 diff=astextplain
-*.RTF	 diff=astextplain
+
+def book (s):
+    print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+    while (s is not '-'):
+        i=len(s)-1
+        k4=0
+        s1=''#автор
+        s2=''#название
+        s3=''#цена
+        s4=''#количество
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k4=k4+1
+                
+        i=i-1
+        s4=s[-k4:-1]
+        k3=k4+1
+        while (i>1)and(s[i]!=' '):
+                i=i-1
+                k3=k3+1
+        i=i-2
+        s3=s[-k3:-k4]
+        k2=k3+2
+        while (i>1)and(s[i]!='"'):
+                i=i-1
+                k2=k2+1
+        i=i-1
+        s2=s[-k2-1:-k3]
+        k1=k2+2
+        s1=s[:-k1]
+        if bo in s2:
+            print ('|',s1.center(25,' '),'|',s2.center(25,' '),
+                       '|',s3.center(4,' '),'|',s4.center(3,' '),'|')
+            print('+',25*'-','+',25*'-','+',4*'-','+',3*'-','+')
+        s = f.readline()       
+
+while True:
+    print("Введите запрос: 0 - весь ассортимент, 1 - поиск по автору, 2 - поиск по названию, 3 - выход")
+    n = int(input())
+    if n == 0:
+        print('весь ассортимент')
+        assort(s)
+        break
+    else:
+        if n == 1:
+            print ('Введите нужного автора')
+            d = input()
+            print('поиск по автору')
+            auth(s)
+            break
+        else:
+            if n == 2:
+                print('поиск по названию')
+                print ('Введите нужное произведение')
+                bo = input()
+                book(s)
+                break
+            else:
+                if n == 3:
+                    break
+                else:
+                    print('Неверный запрос. Попробуйте снова')
+
